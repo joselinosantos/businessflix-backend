@@ -44,5 +44,23 @@ def responder():
     except Exception as e:
         return jsonify({"Erro": str(e)})
 
+
+@app.route("/history", methods=['GET'])
+def historico():
+    try:
+        historico = chat.history
+
+        if historico:
+            return jsonify({'resposta': chat.history})
+        else:
+            return jsonify({'resposta': 'Sem dados no histórico'})
+    except requests.exceptions.RequestException as e:
+        return jsonify({"Erro": "Erro ao obter dados da API."})
+    except json.JSONDecodeError:
+        return jsonify({"Erro": "Formato JSON inválido."})
+    except Exception as e:
+        return jsonify({"Erro": str(e)})
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
