@@ -9,6 +9,7 @@ A plataforma tem o propósito de oferecer séries de conteúdo no formato stream
 1. Google Gemini, Google IA Studio - Poderosa ferramenta de LLM: [Site do Gemini](https://gemini.google.com/?hl=en-GB)
 2. Flask - Framework web leve e rápido em Python: [Site do framework](https://flask.palletsprojects.com/en/3.0.x/)
 3. Trio da alegria da Web: HTML, CSS, Javascript. [Artigo da Alura](https://www.alura.com.br/artigos/html-css-e-js-definicoes)
+4. Json-server: Uma ferramenta bem bacana para simular/mockar uma API [Repositório do Json-server](https://github.com/typicode/json-server)
 
 ### Diagrama
 ![Diagrama](https://github.com/joselinosantos/businessflix-backend/blob/master/imagens/diagrama.png)
@@ -27,6 +28,8 @@ A plataforma tem o propósito de oferecer séries de conteúdo no formato stream
    * Alimentado pelos dados do próprio Chat enquanto o usuário interage (para isso recebe o histórico com chat.history)
    * Ao realizar testes com o modelo 1.5-pro-latest as respostas variaram bastante, portanto foi usada a 1.5-pro com temperatura=0 com a finalidade de retornar apenas o JSON formatado adequadamente para ser retornado como resposta
    * O prompt foi criado com auxílio da própria ferramenta e apresentou bons resultados. Ele basicamente recebe a base de dados da plataforma e o histórico do chat e tem que recomendar os 4 itens com maior probabilidade de interesse do usuário. Dessa forma a plataforma se torna muito mais dinâmica, embora requeira aprimoramentos.
+7.  Desenvolvimento e testes da Interface Web
+8.  Criação de uma base de dados com auxílio do Gemini para ser usada nos exemplos
 
 ### Execução do backend
 **Abra o terminal e acesse a pasta do projeto**
