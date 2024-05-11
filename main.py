@@ -45,7 +45,7 @@ def responder():
         return jsonify({"Erro": str(e)})
 
 
-@app.route("/history", methods=['GET'])
+@app.route("/history")
 def historico():
     try:
         historico = chat.history
@@ -61,6 +61,41 @@ def historico():
     except Exception as e:
         return jsonify({"Erro": str(e)})
 
+
+@app.route("/recomendacoes")
+def recomendar():
+    try:
+        API_TITULOS = 'http://localhost:3000/series'
+        
+        response = requests.get(API_TITULOS)
+        response.raise_for_status()
+        series_data = response.json()
+        historico = chat.history
+
+        if historico:
+            generation_config = {
+                "temperature": 0,
+            }
+
+            model = genai.GenerativeModel(model_name='gemini-pro', generation_config=generation_config)
+
+            prompt = f"""Você é um sistema de recomendação de conteúdo especializado em séries de negócios. \
+            Analise o histórico de conversa a seguir: \
+            {historico} 
+            Com base nas informações extraídas da conversa, identifique e recomende apenas as 4 séries da lista a seguir que têm maior probabilidade de interessar ao usuário. \
+            Priorize séries que estejam diretamente relacionadas aos tópicos e interesses demonstrados na conversa. \
+            Formato da resposta (JSON): id, titulo, autor, capa \
+            Dados dos títulos: {series_data}"""
+
+            response_recomendacao = model.generate_content(prompt)
+
+            return jsonify({'resposta': response_recomendacao.text})
+        else:
+            return jsonify({'resposta': series_data})
+    except json.JSONDecodeError:
+        return jsonify({"Erro: Formato JSON inválido."})
+    except Exception as e:
+        return jsonify({"Erro": str(e)})
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
