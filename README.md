@@ -3,7 +3,7 @@
 
 A plataforma tem o propósito de oferecer séries de conteúdo no formato streaming no nicho de negócios proporcionando uma experiência amigável ao usuário. Ainda oferece um Chatbot inteligente especialista em consultoria de negócios para empresas brasileiras com capacidade para orientar, informar, tirar dúvidas sobre os conteúdos da plataforma e o que mais o usuário precisar.
 
-![Businessflix](https://github.com/joselinosantos/businessflix-backend/blob/master/businessflix.png)
+![Businessflix](https://github.com/joselinosantos/businessflix-backend/blob/master/imagens/businessflix.png)
 
 ### Tecnologias
 1. Google Gemini, Google IA Studio - Poderosa ferramenta de LLM: [Site do Gemini](https://gemini.google.com/?hl=en-GB)
