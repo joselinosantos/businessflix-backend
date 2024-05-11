@@ -61,7 +61,7 @@ No caso estou usando Insomnia para fazer uma requisição do tipo GET.
 Observe que o corpo do JSON possui a solicitação que será incluída dentro do prompt.
 
 7. Após algumas interações com o Chat teste o endpoint de recomendações com o endereço: http://127.0.0.1:5000/recomendacoes
-![Teste endpoint recomendacoes](https://github.com/joselinosantos/businessflix-backend/blob/master/imagens/api_businesschat.png)
+![Teste endpoint recomendacoes](https://github.com/joselinosantos/businessflix-backend/blob/master/imagens/api_recomendacoes.png)
 
 ### Front end
 Por uma questão de boa prática e organização, todo o front end é separado e está em outro repositório. <br>
